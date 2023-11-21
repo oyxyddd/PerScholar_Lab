@@ -36,10 +36,32 @@ const isValid = isSum50 && isTwoOdd && !isOver25 && isUnique;
 console.log(isValid);
 
 // Here's another example of how this COULD be done,
-// but it SHOULD NOT be done this way. As programmers,
+// but it SHOULD NOT be done this way. As programmers
 // we break things into small, manageable pieces so that
 // they can be better understood, scaled, and maintained.
 const dontDoThis = ((n1 + n2 + n3 + n4) == 50) && 
   ((n1 % 2) + (n2 % 2) + (n3 % 2) + (n4 % 2) >= 2) && 
   !(n1 > 25 || n2 > 25 || n3 > 25 || n4 > 25) && 
   (n1 != n2 && n1 != n3 && n1 != n4 && n2 != n3 && n2 != n4 && n3 != n4);
+
+//Part1
+//1.1 Check if all numbers are divisible by 5. Cache the result in a variable.
+const isAllDivsibleBy5 = n1%5==0 && n2%5==0 && n3%5==0 && n4%5==0;
+console.log(isAllDivsibleBy5)
+
+// 2.2Check if the first number is larger than the last. Cache the result in a variable.
+const isFirstLarger = n1 > n4;
+console.log(isFirstLarger)
+// 1.3Accomplish the following arithmetic chain:
+// Subtract the first number from the second number.
+// Multiply the result by the third number.
+// Find the remainder of dividing the result by the fourth number.
+
+const computedResult = ((n2-n1)*n3)%n4;
+console.log(computedResult)
+
+// 1.4 Change the way that isOver25 calculates so that we do not need to use the NOT operator (!) in other logic comparisons. Rename the variable as appropriate.
+// const isOver25 = n1 > 25 || n2 > 25 || n3 > 25 || n4 > 25;
+
+
+console.log (`The four numbers are valid according to the provided criteria: ${isValid}.`);
