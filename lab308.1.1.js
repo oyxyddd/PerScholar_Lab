@@ -65,3 +65,25 @@ console.log(computedResult)
 
 
 console.log (`The four numbers are valid according to the provided criteria: ${isValid}.`);
+
+// Part2
+//Declare variables
+const distance=1500;
+const fuelEfficiency55=30;
+const fuelEfficiency60=28;
+const fuelEfficiency75=23;
+const budget=175;
+const fuelPrice=3;
+
+// 2.1How many gallons of fuel will you need for the entire trip?
+const fuelQuantity = Math.round(budget / fuelPrice);
+console.log(fuelQuantity);
+// 2.2 Will your budget be enough to cover the fuel expense?
+const bugetDistance =  fuelQuantity * fuelEfficiency55;
+console.log(bugetDistance>distance);
+//2.3 How long will the trip take, in hours?
+tripTime = Math.round(distance / 55);
+console.log(tripTime);
+
+console.log (`The budget is enough to travel with the speed of 55mile per hour, the travel time is ${tripTime} hours`);
+
